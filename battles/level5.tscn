@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://b400isj7inu12"]
+
+[ext_resource type="PackedScene" uid="uid://3d46m38lc6ak" path="res://scenes/enemy/enemy.tscn" id="1_u2b0u"]
+[ext_resource type="Resource" uid="uid://b7s2pl4p5kewg" path="res://enemies/blackhole/hole_enemy.tres" id="2_vrknt"]
+
+[node name="Level5" type="Node2D"]
+
+[node name="hole" parent="." instance=ExtResource("1_u2b0u")]
+position = Vector2(1471, 550)
+stats = ExtResource("2_vrknt")

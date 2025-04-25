@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="BattleStats" load_steps=3 format=3 uid="uid://w0nviccsmfsw"]
+
+[ext_resource type="PackedScene" uid="uid://b400isj7inu12" path="res://battles/level5.tscn" id="1_3pv73"]
+[ext_resource type="Script" path="res://custom_resources/battle_stats.gd" id="2_81y7t"]
+
+[resource]
+script = ExtResource("2_81y7t")
+battle_lvl = 5
+stick_reward_min = 5
+stick_reward_max = 8
+enemies = ExtResource("1_3pv73")

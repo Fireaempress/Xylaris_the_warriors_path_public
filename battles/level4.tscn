@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://s6ye112un3bg"]
+
+[ext_resource type="PackedScene" uid="uid://3d46m38lc6ak" path="res://scenes/enemy/enemy.tscn" id="1_2ir0w"]
+[ext_resource type="Resource" uid="uid://fev0mxw7iidl" path="res://enemies/snake/snake_enemy.tres" id="2_bcv80"]
+[ext_resource type="Resource" uid="uid://crky1nfdlh14t" path="res://enemies/bat/bat_enemy.tres" id="3_bbmai"]
+[ext_resource type="Resource" uid="uid://b2g7n3ccf4wew" path="res://enemies/spider/spider_enemy.tres" id="4_srcf8"]
+
+[node name="Level4" type="Node2D"]
+
+[node name="spider" parent="." instance=ExtResource("1_2ir0w")]
+position = Vector2(1681, 603)
+stats = ExtResource("4_srcf8")
+
+[node name="bat" parent="." instance=ExtResource("1_2ir0w")]
+position = Vector2(1444, 388)
+stats = ExtResource("3_bbmai")
+
+[node name="snake" parent="." instance=ExtResource("1_2ir0w")]
+position = Vector2(1188, 603)
+stats = ExtResource("2_bcv80")
