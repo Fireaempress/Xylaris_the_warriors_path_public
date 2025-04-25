@@ -1,0 +1,117 @@
+[gd_scene load_steps=11 format=3 uid="uid://b8bq0k4k1e5ll"]
+
+[ext_resource type="PackedScene" uid="uid://cahlkj7jeavk8" path="res://scenes/map/map.tscn" id="1_8was1"]
+[ext_resource type="Script" path="res://scenes/run/run.gd" id="1_y6sa4"]
+[ext_resource type="Resource" uid="uid://cn7xra5qn3uf5" path="res://scenes/run/run_startup.tres" id="2_c600j"]
+[ext_resource type="Theme" uid="uid://b7061xioeeqmr" path="res://art1/main_theme.tres" id="4_jwxdn"]
+[ext_resource type="PackedScene" uid="uid://b78ayypwq8raw" path="res://scenes/ui/card_pile_button.tscn" id="5_c0n6t"]
+[ext_resource type="PackedScene" uid="uid://brk1e5mf15sdt" path="res://scenes/ui/sticks_ui.tscn" id="5_tw6o3"]
+[ext_resource type="PackedScene" uid="uid://dxwh0urdikpft" path="res://scenes/card_pile_view/card_pile_view.tscn" id="6_758vy"]
+[ext_resource type="PackedScene" uid="uid://vbg602so2dey" path="res://scenes/ui/stats_ui.tscn" id="6_r2b4v"]
+[ext_resource type="FontFile" uid="uid://dwx3gy07u7grg" path="res://art1/Caveat-VariableFont_wght.ttf" id="8_o2ttw"]
+
+[sub_resource type="Theme" id="Theme_p7u8g"]
+
+[node name="Run" type="Node"]
+script = ExtResource("1_y6sa4")
+run_startup = ExtResource("2_c600j")
+
+[node name="Map" parent="." instance=ExtResource("1_8was1")]
+
+[node name="CurrentView" type="Node" parent="."]
+
+[node name="Debug" type="VBoxContainer" parent="."]
+visible = false
+anchors_preset = 9
+anchor_bottom = 1.0
+grow_vertical = 2
+theme = ExtResource("4_jwxdn")
+alignment = 1
+
+[node name="MapButton" type="Button" parent="Debug"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Map"
+
+[node name="BattleButton" type="Button" parent="Debug"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Battle"
+
+[node name="ShopButton" type="Button" parent="Debug"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Shop"
+
+[node name="TreasureButton" type="Button" parent="Debug"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Treasure"
+
+[node name="RewardsButton" type="Button" parent="Debug"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Reward"
+
+[node name="CampfireButton" type="Button" parent="Debug"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Campfire"
+
+[node name="TopBar" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+layer = 3
+
+[node name="Background" type="ColorRect" parent="TopBar"]
+custom_minimum_size = Vector2(1925, 150)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -960.0
+offset_right = 960.0
+offset_bottom = 150.0
+grow_horizontal = 2
+color = Color(0.866667, 0.341176, 0.533333, 0.454902)
+
+[node name="DeckButton" parent="TopBar" node_paths=PackedStringArray("counter") instance=ExtResource("5_c0n6t")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(16, 0)
+offset_left = 1570.0
+offset_right = 1933.0
+counter = NodePath("Counter")
+
+[node name="Counter" type="Label" parent="TopBar/DeckButton"]
+layout_mode = 0
+offset_left = 164.0
+offset_top = 21.0
+offset_right = 218.0
+offset_bottom = 97.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_o2ttw")
+theme_override_font_sizes/font_size = 60
+text = "99"
+
+[node name="BarItems" type="HBoxContainer" parent="TopBar"]
+custom_minimum_size = Vector2(0, 150)
+anchors_preset = -1
+anchor_left = 0.146
+anchor_right = 0.994
+anchor_bottom = 0.022
+offset_left = -151.32
+offset_right = -41.48
+offset_bottom = 126.24
+grow_horizontal = 2
+theme = SubResource("Theme_p7u8g")
+theme_override_constants/separation = 500
+
+[node name="Stats" parent="TopBar/BarItems" instance=ExtResource("6_r2b4v")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="SticksUI" parent="TopBar/BarItems" instance=ExtResource("5_tw6o3")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="DeckView" parent="TopBar" instance=ExtResource("6_758vy")]
+unique_name_in_owner = true
+visible = false

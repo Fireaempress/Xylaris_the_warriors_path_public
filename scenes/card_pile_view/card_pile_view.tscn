@@ -1,0 +1,89 @@
+[gd_scene load_steps=6 format=3 uid="uid://dxwh0urdikpft"]
+
+[ext_resource type="Script" path="res://scenes/card_pile_view/card_pile_view.gd" id="1_34fe1"]
+[ext_resource type="FontFile" uid="uid://dwx3gy07u7grg" path="res://art1/Caveat-VariableFont_wght.ttf" id="2_4v3y2"]
+[ext_resource type="Theme" uid="uid://b7061xioeeqmr" path="res://art1/main_theme.tres" id="3_jxdcj"]
+[ext_resource type="PackedScene" uid="uid://dnxb07ls5rxvb" path="res://scenes/ui/card_tooltip_popup.tscn" id="4_gls6f"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_w484h"]
+font = ExtResource("2_4v3y2")
+font_size = 60
+
+[node name="CardPileView" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_34fe1")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.2, 0, 0.00392157, 0.490196)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Card Pile"
+label_settings = SubResource("LabelSettings_w484h")
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 2
+
+[node name="Cards" type="GridContainer" parent="MarginContainer/VBoxContainer/ScrollContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 6
+
+[node name="BackButton" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -130.0
+offset_right = 100.0
+offset_bottom = -14.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("3_jxdcj")
+theme_override_font_sizes/font_size = 60
+text = "Back"
+
+[node name="CardTooltipPopup" parent="." instance=ExtResource("4_gls6f")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1

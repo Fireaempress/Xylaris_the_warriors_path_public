@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bqc7067v4derh"]
+
+[ext_resource type="Script" path="res://scenes/card_ui/card_menu_ui.gd" id="1_j5yp1"]
+[ext_resource type="Resource" uid="uid://dpjqdow2hswgu" path="res://characters/cards/block.tres" id="2_57y5c"]
+[ext_resource type="PackedScene" uid="uid://c6sli4x84m4ak" path="res://scenes/ui/card_visuals.tscn" id="2_us2s2"]
+
+[node name="CardMenuUI" type="CenterContainer"]
+offset_left = 139.0
+offset_top = 136.0
+offset_right = 439.0
+offset_bottom = 536.0
+size_flags_horizontal = 3
+script = ExtResource("1_j5yp1")
+card = ExtResource("2_57y5c")
+
+[node name="Visuals" parent="." instance=ExtResource("2_us2s2")]
+layout_mode = 2
+
+[connection signal="gui_input" from="Visuals" to="." method="_on_visuals_gui_input"]
+[connection signal="mouse_entered" from="Visuals" to="." method="_on_visuals_mouse_entered"]
+[connection signal="mouse_exited" from="Visuals" to="." method="_on_visuals_mouse_exited"]

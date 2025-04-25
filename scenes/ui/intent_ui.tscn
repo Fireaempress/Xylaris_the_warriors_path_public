@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://bm4lnm8v0k6f8"]
+
+[ext_resource type="Script" path="res://scenes/ui/intent_ui.gd" id="1_5vut8"]
+[ext_resource type="Theme" uid="uid://b7061xioeeqmr" path="res://art1/main_theme.tres" id="2_ydpxv"]
+[ext_resource type="FontFile" uid="uid://dwx3gy07u7grg" path="res://art1/Caveat-VariableFont_wght.ttf" id="3_b17uw"]
+[ext_resource type="Texture2D" uid="uid://bq4im540nk025" path="res://art/tile_0106.png" id="4_2fhyb"]
+
+[node name="IntentUI" type="HBoxContainer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 25.0
+offset_bottom = 35.0
+grow_horizontal = 2
+theme_override_constants/separation = -1
+alignment = 1
+script = ExtResource("1_5vut8")
+
+[node name="Number" type="Label" parent="."]
+layout_mode = 2
+size_flags_vertical = 1
+theme = ExtResource("2_ydpxv")
+theme_override_fonts/font = ExtResource("3_b17uw")
+theme_override_font_sizes/font_size = 70
+text = "7"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Icon" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("4_2fhyb")
+expand_mode = 1
+stretch_mode = 5

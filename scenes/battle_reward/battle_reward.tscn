@@ -1,0 +1,97 @@
+[gd_scene load_steps=8 format=3 uid="uid://dqx06l3bexfcj"]
+
+[ext_resource type="Script" path="res://scenes/battle_reward/battle_reward.gd" id="1_w6gdn"]
+[ext_resource type="Theme" uid="uid://b7061xioeeqmr" path="res://art1/main_theme.tres" id="2_qvlht"]
+[ext_resource type="PackedScene" uid="uid://boepudjnnelbi" path="res://scenes/ui/reward_button.tscn" id="3_6x7aw"]
+[ext_resource type="FontFile" uid="uid://dwx3gy07u7grg" path="res://art1/Caveat-VariableFont_wght.ttf" id="3_vvc07"]
+[ext_resource type="Texture2D" uid="uid://dkilbykbw5her" path="res://art1/smallcards.png" id="5_lhk32"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_1sjvf"]
+font = ExtResource("3_vvc07")
+font_size = 60
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wb5u5"]
+bg_color = Color(0.403922, 0.635294, 0.74902, 0.713726)
+
+[node name="BattleReward" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_w6gdn")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch_mode = 5
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.223529, 0.0666667, 0, 0.662745)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -480.0
+offset_top = -352.0
+offset_right = 480.0
+offset_bottom = 352.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_qvlht")
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Rewards"
+label_settings = SubResource("LabelSettings_1sjvf")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RewardContainer" type="PanelContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(110, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_wb5u5")
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/RewardContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="Rewards" type="VBoxContainer" parent="VBoxContainer/RewardContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="CardReward" parent="VBoxContainer/RewardContainer/MarginContainer/Rewards" instance=ExtResource("3_6x7aw")]
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+reward_icon = ExtResource("5_lhk32")
+reward_text = "new card"
+
+[node name="BackButton" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(150, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Continue"
+
+[connection signal="pressed" from="VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]

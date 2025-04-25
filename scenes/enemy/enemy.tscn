@@ -1,0 +1,46 @@
+[gd_scene load_steps=8 format=3 uid="uid://3d46m38lc6ak"]
+
+[ext_resource type="Script" path="res://scenes/enemy/enemy.gd" id="1_hctfu"]
+[ext_resource type="Material" uid="uid://d30aqi80c1nrc" path="res://art/white_sprite_material.tres" id="2_4k7f3"]
+[ext_resource type="Texture2D" uid="uid://bb3rcs5nqntir" path="res://art/arrow.png" id="2_u21ef"]
+[ext_resource type="Texture2D" uid="uid://dguxqunmt18ua" path="res://art1/snake.png" id="3_4kmey"]
+[ext_resource type="PackedScene" uid="uid://vbg602so2dey" path="res://scenes/ui/stats_ui.tscn" id="3_hplwm"]
+[ext_resource type="PackedScene" uid="uid://bm4lnm8v0k6f8" path="res://scenes/ui/intent_ui.tscn" id="5_m0nfb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1wc53"]
+size = Vector2(227, 196)
+
+[node name="Enemy" type="Area2D" groups=["enemies"]]
+material = ExtResource("2_4k7f3")
+collision_layer = 4
+script = ExtResource("1_hctfu")
+
+[node name="Body" type="Sprite2D" parent="."]
+position = Vector2(0.75, -25.75)
+scale = Vector2(2, 1.949)
+texture = ExtResource("3_4kmey")
+
+[node name="Arrow" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(91, 1)
+rotation = -1.5708
+texture = ExtResource("2_u21ef")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(4.5, -21)
+shape = SubResource("RectangleShape2D_1wc53")
+
+[node name="StatsUI" parent="." instance=ExtResource("3_hplwm")]
+offset_left = -134.5
+offset_top = 69.0
+offset_right = 134.5
+offset_bottom = 169.0
+
+[node name="IntentUI" parent="." instance=ExtResource("5_m0nfb")]
+offset_left = -41.5
+offset_top = -199.0
+offset_right = 39.5
+offset_bottom = -110.0
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]

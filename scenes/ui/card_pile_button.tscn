@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://b78ayypwq8raw"]
+
+[ext_resource type="Texture2D" uid="uid://dioms6tdasghq" path="res://art1/box.png" id="1_tang1"]
+[ext_resource type="Script" path="res://scenes/ui/card_pile_button.gd" id="2_n80s3"]
+
+[node name="CardPileButton" type="TextureButton"]
+offset_right = 363.0
+offset_bottom = 303.0
+texture_normal = ExtResource("1_tang1")
+stretch_mode = 5
+script = ExtResource("2_n80s3")

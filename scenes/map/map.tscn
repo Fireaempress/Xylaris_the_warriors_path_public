@@ -1,0 +1,129 @@
+[gd_scene load_steps=9 format=3 uid="uid://cahlkj7jeavk8"]
+
+[ext_resource type="Script" path="res://scenes/map/map.gd" id="1_hx423"]
+[ext_resource type="Texture2D" uid="uid://hetd62rs0btn" path="res://art1/mapa.png" id="2_ptcva"]
+[ext_resource type="FontFile" uid="uid://dwx3gy07u7grg" path="res://art1/Caveat-VariableFont_wght.ttf" id="2_yx4ey"]
+[ext_resource type="StyleBox" uid="uid://dpxlucd2jnpp3" path="res://art1/map_stage_button.tres" id="4_jdclc"]
+[ext_resource type="StyleBox" uid="uid://ccd2ug5prjyov" path="res://art1/map_stage_button_hover.tres" id="5_eei0s"]
+[ext_resource type="Texture2D" uid="uid://68llmwn8rb73" path="res://art1/campfire.png" id="5_np0sp"]
+[ext_resource type="StyleBox" uid="uid://bf5bxhotcshj2" path="res://art1/map_stage_button_pressed.tres" id="6_a5e6b"]
+[ext_resource type="StyleBox" uid="uid://b1qxr4gt1mbd7" path="res://art1/map_stage_button_disabled.tres" id="7_jqe08"]
+
+[node name="Map" type="Node2D"]
+script = ExtResource("1_hx423")
+
+[node name="MapBackground" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="Background" type="TextureRect" parent="MapBackground"]
+custom_minimum_size = Vector2(1920, 1080)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -960.0
+offset_right = 960.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+texture = ExtResource("2_ptcva")
+expand_mode = 1
+
+[node name="Rooms" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="One" type="Button" parent="Rooms"]
+unique_name_in_owner = true
+offset_left = 105.0
+offset_top = 201.0
+offset_right = 338.0
+offset_bottom = 430.0
+theme_override_fonts/font = ExtResource("2_yx4ey")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = ExtResource("4_jdclc")
+theme_override_styles/hover = ExtResource("5_eei0s")
+theme_override_styles/pressed = ExtResource("6_a5e6b")
+theme_override_styles/disabled = ExtResource("7_jqe08")
+text = "1"
+
+[node name="Two" type="Button" parent="Rooms"]
+unique_name_in_owner = true
+offset_left = 374.0
+offset_top = 693.0
+offset_right = 601.0
+offset_bottom = 919.0
+theme_override_fonts/font = ExtResource("2_yx4ey")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = ExtResource("4_jdclc")
+theme_override_styles/hover = ExtResource("5_eei0s")
+theme_override_styles/pressed = ExtResource("6_a5e6b")
+theme_override_styles/disabled = ExtResource("7_jqe08")
+disabled = true
+text = "2"
+
+[node name="Campfire" type="Button" parent="Rooms"]
+unique_name_in_owner = true
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 772.0
+offset_top = 361.0
+offset_right = 1114.0
+offset_bottom = 719.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+disabled = true
+icon = ExtResource("5_np0sp")
+flat = true
+icon_alignment = 1
+
+[node name="Three" type="Button" parent="Rooms"]
+unique_name_in_owner = true
+offset_left = 1173.0
+offset_top = 223.0
+offset_right = 1363.0
+offset_bottom = 412.0
+theme_override_fonts/font = ExtResource("2_yx4ey")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = ExtResource("4_jdclc")
+theme_override_styles/hover = ExtResource("5_eei0s")
+theme_override_styles/pressed = ExtResource("6_a5e6b")
+theme_override_styles/disabled = ExtResource("7_jqe08")
+disabled = true
+text = "3"
+
+[node name="Four" type="Button" parent="Rooms"]
+unique_name_in_owner = true
+offset_left = 1574.0
+offset_top = 442.0
+offset_right = 1763.0
+offset_bottom = 630.0
+theme_override_fonts/font = ExtResource("2_yx4ey")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = ExtResource("4_jdclc")
+theme_override_styles/hover = ExtResource("5_eei0s")
+theme_override_styles/pressed = ExtResource("6_a5e6b")
+theme_override_styles/disabled = ExtResource("7_jqe08")
+disabled = true
+text = "4"
+
+[node name="Five" type="Button" parent="Rooms"]
+unique_name_in_owner = true
+offset_left = 1545.0
+offset_top = 804.0
+offset_right = 1759.0
+offset_bottom = 1017.0
+theme_override_fonts/font = ExtResource("2_yx4ey")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = ExtResource("4_jdclc")
+theme_override_styles/hover = ExtResource("5_eei0s")
+theme_override_styles/pressed = ExtResource("6_a5e6b")
+theme_override_styles/disabled = ExtResource("7_jqe08")
+disabled = true
+text = "5
+"
+
+[connection signal="pressed" from="Rooms/One" to="." method="_on_one_pressed"]
+[connection signal="pressed" from="Rooms/Two" to="." method="_on_two_pressed"]
+[connection signal="pressed" from="Rooms/Campfire" to="." method="_on_campfire_pressed"]
+[connection signal="pressed" from="Rooms/Three" to="." method="_on_three_pressed"]
+[connection signal="pressed" from="Rooms/Four" to="." method="_on_four_pressed"]
+[connection signal="pressed" from="Rooms/Five" to="." method="_on_five_pressed"]

@@ -1,0 +1,133 @@
+[gd_scene load_steps=9 format=3 uid="uid://c6sli4x84m4ak"]
+
+[ext_resource type="Theme" uid="uid://b7061xioeeqmr" path="res://art1/main_theme.tres" id="1_jc6mp"]
+[ext_resource type="Script" path="res://scenes/ui/card_visuals.gd" id="2_0mlrm"]
+[ext_resource type="StyleBox" uid="uid://5vkxjufwe4v2" path="res://scenes/card_ui/card_base_stylebox.tres" id="2_mlj63"]
+[ext_resource type="Resource" uid="uid://v7kvjqhy5oja" path="res://characters/cards/orion.tres" id="3_vm20b"]
+[ext_resource type="Texture2D" uid="uid://cigk3i88blq1f" path="res://art1/kartička okraj.png" id="5_hpdnh"]
+[ext_resource type="FontFile" uid="uid://dwx3gy07u7grg" path="res://art1/Caveat-VariableFont_wght.ttf" id="6_ewngj"]
+[ext_resource type="Texture2D" uid="uid://77jji4kb3v2q" path="res://art1/kruh.png" id="6_yhbp0"]
+[ext_resource type="Texture2D" uid="uid://bwn4um2ipbcat" path="res://art1/spiraly.png" id="7_chw1o"]
+
+[node name="CardVisuals" type="Control"]
+custom_minimum_size = Vector2(264, 393)
+layout_mode = 3
+anchors_preset = 0
+offset_left = 6.0
+offset_top = 5.0
+offset_right = 270.0
+offset_bottom = 398.0
+theme = ExtResource("1_jc6mp")
+script = ExtResource("2_0mlrm")
+card = ExtResource("3_vm20b")
+
+[node name="Panel" type="Panel" parent="."]
+clip_contents = true
+custom_minimum_size = Vector2(254, 392)
+layout_mode = 1
+offset_right = 254.0
+offset_bottom = 392.0
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("2_mlj63")
+
+[node name="Icon" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -111.0
+offset_top = -168.5
+offset_right = 102.0
+offset_bottom = -3.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Design" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -156.0
+offset_top = -240.5
+offset_right = 149.0
+offset_bottom = 248.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_hpdnh")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Cost" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 59.0
+offset_top = 99.5
+offset_right = 86.0
+offset_bottom = 175.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("6_ewngj")
+theme_override_font_sizes/font_size = 60
+text = "2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Rarity" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -21.0
+offset_top = -0.5
+offset_right = 18.0
+offset_bottom = 36.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_yhbp0")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_lock_ = true
+
+[node name="Spirals" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -178.0
+offset_top = -247.5
+offset_right = 170.0
+offset_bottom = 254.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_chw1o")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_lock_ = true
+
+[node name="Special" type="Label" parent="."]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 240.0
+offset_right = 216.0
+offset_bottom = 313.0
+theme_override_fonts/font = ExtResource("6_ewngj")
+theme_override_font_sizes/font_size = 25
+horizontal_alignment = 1
+vertical_alignment = 1

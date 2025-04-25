@@ -1,0 +1,104 @@
+[gd_scene load_steps=7 format=3 uid="uid://c46trpfijbhot"]
+
+[ext_resource type="Script" path="res://scenes/ui/main_menu.gd" id="1_tgm1i"]
+[ext_resource type="FontFile" uid="uid://dwx3gy07u7grg" path="res://art1/Caveat-VariableFont_wght.ttf" id="2_ovuha"]
+[ext_resource type="Theme" uid="uid://b7061xioeeqmr" path="res://art1/main_theme.tres" id="2_xcef6"]
+
+[sub_resource type="Gradient" id="Gradient_pa2gt"]
+offsets = PackedFloat32Array(0.42, 1)
+colors = PackedColorArray(0.803922, 0.705882, 0.858824, 1, 0.635294, 0.823529, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_f5ikn"]
+gradient = SubResource("Gradient_pa2gt")
+
+[sub_resource type="LabelSettings" id="LabelSettings_cgrgu"]
+line_spacing = 5.0
+font = ExtResource("2_ovuha")
+font_size = 80
+font_color = Color(0.501961, 0.352941, 1, 1)
+shadow_size = 5
+shadow_color = Color(0.788235, 0, 0.552941, 0.498039)
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tgm1i")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_f5ikn")
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -440.5
+offset_top = -416.0
+offset_right = 440.5
+offset_bottom = -125.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_ovuha")
+text = "Xylaris: The Warrior's Path"
+label_settings = SubResource("LabelSettings_cgrgu")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = -5.0
+offset_right = 30.0
+offset_bottom = 47.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 50
+
+[node name="Continue" type="Button" parent="VBoxContainer"]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(0, 14)
+layout_mode = 2
+theme = ExtResource("2_xcef6")
+text = "Continue"
+
+[node name="NewRun" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+theme = ExtResource("2_xcef6")
+theme_override_colors/font_color = Color(0.572549, 0.831373, 0.972549, 1)
+theme_override_colors/font_pressed_color = Color(0.572549, 0.831373, 0.972549, 1)
+theme_override_colors/font_hover_color = Color(0.572549, 0.831373, 0.972549, 1)
+theme_override_font_sizes/font_size = 60
+text = "New run"
+
+[node name="Exit" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+theme = ExtResource("2_xcef6")
+theme_override_colors/font_color = Color(0.572549, 0.831373, 0.972549, 1)
+theme_override_colors/font_pressed_color = Color(0.572549, 0.831373, 0.972549, 1)
+theme_override_colors/font_hover_color = Color(0.572549, 0.831373, 0.972549, 1)
+theme_override_font_sizes/font_size = 60
+text = "Exit"
+
+[connection signal="pressed" from="VBoxContainer/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="VBoxContainer/NewRun" to="." method="_on_new_run_pressed"]
+[connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]
