@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="EnemyStats" load_steps=4 format=3 uid="uid://b2g7n3ccf4wew"]
+
+[ext_resource type="Script" path="res://custom_resources/enemy_stats.gd" id="1_bdkl3"]
+[ext_resource type="PackedScene" uid="uid://sedsplluclh6" path="res://enemies/spider/spider_enemy_ai.tscn" id="1_wyi1a"]
+[ext_resource type="Texture2D" uid="uid://ci4mt6am216cd" path="res://art1/pavucik.png" id="2_owfuy"]
+
+[resource]
+script = ExtResource("1_bdkl3")
+ai = ExtResource("1_wyi1a")
+max_health = 15
+art = ExtResource("2_owfuy")

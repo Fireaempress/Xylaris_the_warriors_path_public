@@ -1,0 +1,33 @@
+[gd_scene load_steps=9 format=3 uid="uid://u7kvvquhkw7k"]
+
+[ext_resource type="Script" path="res://scenes/enemy/enemy_action_picker.gd" id="1_yj2uw"]
+[ext_resource type="Script" path="res://enemies/bat/bat_block_action.gd" id="2_04rob"]
+[ext_resource type="Script" path="res://enemies/bat/bat_attack_action.gd" id="2_7k8b6"]
+[ext_resource type="Texture2D" uid="uid://clmiajtd2y34u" path="res://art1/mecik2.png" id="3_x7esw"]
+[ext_resource type="Script" path="res://custom_resources/intent.gd" id="4_ew1wf"]
+[ext_resource type="Texture2D" uid="uid://56mefebp4qxw" path="res://art1/stit.png" id="6_5gior"]
+
+[sub_resource type="Resource" id="Resource_phrco"]
+script = ExtResource("4_ew1wf")
+number = "2x4"
+icon = ExtResource("3_x7esw")
+
+[sub_resource type="Resource" id="Resource_iklu1"]
+script = ExtResource("4_ew1wf")
+number = "4"
+icon = ExtResource("6_5gior")
+
+[node name="BatEnemyAI" type="Node"]
+script = ExtResource("1_yj2uw")
+
+[node name="AttackAction" type="Node" parent="."]
+script = ExtResource("2_7k8b6")
+intent = SubResource("Resource_phrco")
+type = 1
+chance_weight = 3.0
+
+[node name="BlockAction" type="Node" parent="."]
+script = ExtResource("2_04rob")
+intent = SubResource("Resource_iklu1")
+type = 1
+chance_weight = 1.0

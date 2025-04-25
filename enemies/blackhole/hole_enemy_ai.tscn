@@ -1,0 +1,56 @@
+[gd_scene load_steps=14 format=3 uid="uid://cr1djmwc8tukf"]
+
+[ext_resource type="Script" path="res://scenes/enemy/enemy_action_picker.gd" id="1_wgbbw"]
+[ext_resource type="Script" path="res://enemies/blackhole/hole_big_attack_action.gd" id="2_c0ycp"]
+[ext_resource type="Script" path="res://enemies/blackhole/hole_small_attack_action.gd" id="2_rmhj1"]
+[ext_resource type="Texture2D" uid="uid://clmiajtd2y34u" path="res://art1/mecik2.png" id="3_6jrg4"]
+[ext_resource type="Script" path="res://enemies/blackhole/hole_tiny_attack_action.gd" id="3_ckqpq"]
+[ext_resource type="Script" path="res://custom_resources/intent.gd" id="4_i4ckc"]
+[ext_resource type="Texture2D" uid="uid://56mefebp4qxw" path="res://art1/stit.png" id="6_ddvq6"]
+[ext_resource type="Texture2D" uid="uid://yunh0ryyxkqh" path="res://art1/mecik.png" id="6_ilfkd"]
+[ext_resource type="Script" path="res://enemies/blackhole/hole_small_block_action.gd" id="7_emaqg"]
+
+[sub_resource type="Resource" id="Resource_ptdbn"]
+script = ExtResource("4_i4ckc")
+number = "4"
+icon = ExtResource("3_6jrg4")
+
+[sub_resource type="Resource" id="Resource_aivku"]
+script = ExtResource("4_i4ckc")
+number = "10"
+icon = ExtResource("6_ilfkd")
+
+[sub_resource type="Resource" id="Resource_dt3d2"]
+script = ExtResource("4_i4ckc")
+number = "2x1"
+icon = ExtResource("3_6jrg4")
+
+[sub_resource type="Resource" id="Resource_85b14"]
+script = ExtResource("4_i4ckc")
+number = "3"
+icon = ExtResource("6_ddvq6")
+
+[node name="HoleEnemyAI" type="Node"]
+script = ExtResource("1_wgbbw")
+
+[node name="SmallAttackAction" type="Node" parent="."]
+script = ExtResource("2_rmhj1")
+intent = SubResource("Resource_ptdbn")
+type = 1
+chance_weight = 2.0
+
+[node name="BigAttackAction" type="Node" parent="."]
+script = ExtResource("2_c0ycp")
+intent = SubResource("Resource_aivku")
+
+[node name="TinyAttackAction" type="Node" parent="."]
+script = ExtResource("3_ckqpq")
+intent = SubResource("Resource_dt3d2")
+type = 1
+chance_weight = 4.0
+
+[node name="SmallBlockAction" type="Node" parent="."]
+script = ExtResource("7_emaqg")
+intent = SubResource("Resource_85b14")
+type = 1
+chance_weight = 2.0

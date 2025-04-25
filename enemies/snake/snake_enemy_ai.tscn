@@ -1,0 +1,32 @@
+[gd_scene load_steps=9 format=3 uid="uid://nwnwgxopjryo"]
+
+[ext_resource type="Script" path="res://scenes/enemy/enemy_action_picker.gd" id="1_af6o3"]
+[ext_resource type="Script" path="res://enemies/snake/snake_attack_action.gd" id="2_h5wro"]
+[ext_resource type="Texture2D" uid="uid://clmiajtd2y34u" path="res://art1/mecik2.png" id="3_cbxu1"]
+[ext_resource type="Script" path="res://enemies/snake/snake_block_action.gd" id="3_esfv4"]
+[ext_resource type="Script" path="res://custom_resources/intent.gd" id="4_o8voh"]
+[ext_resource type="Texture2D" uid="uid://56mefebp4qxw" path="res://art1/stit.png" id="6_i1gfs"]
+
+[sub_resource type="Resource" id="Resource_sldse"]
+script = ExtResource("4_o8voh")
+number = "10"
+icon = ExtResource("3_cbxu1")
+
+[sub_resource type="Resource" id="Resource_1iwgx"]
+script = ExtResource("4_o8voh")
+number = "5"
+icon = ExtResource("6_i1gfs")
+
+[node name="SnakeEnemyAI" type="Node"]
+script = ExtResource("1_af6o3")
+
+[node name="AttackAction" type="Node" parent="."]
+script = ExtResource("2_h5wro")
+attack = 10
+intent = SubResource("Resource_sldse")
+
+[node name="BlockAction" type="Node" parent="."]
+script = ExtResource("3_esfv4")
+intent = SubResource("Resource_1iwgx")
+type = 1
+chance_weight = 1.0
