@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://cyyu6s5vwayvg"]
+
+[ext_resource type="FontFile" uid="uid://dwx3gy07u7grg" path="res://art1/Caveat-VariableFont_wght.ttf" id="1_civvt"]
+
+[resource]
+default_font = ExtResource("1_civvt")
+default_font_size = 30
