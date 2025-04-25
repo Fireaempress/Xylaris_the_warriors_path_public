@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="CharacterStats" load_steps=5 format=3 uid="uid://booqty3c4l7t3"]
+
+[ext_resource type="Script" path="res://custom_resources/character_stats.gd" id="1_aw6q2"]
+[ext_resource type="Texture2D" uid="uid://byg73f4yftwgl" path="res://art1/warrior2.png" id="1_uguor"]
+[ext_resource type="Resource" uid="uid://tbwlent8crnl" path="res://characters/warrior/warrior_draftable_cards.tres" id="2_aimki"]
+[ext_resource type="Resource" uid="uid://2g53v6b2es0b" path="res://characters/warrior/warrior_starting_deck.tres" id="3_p4f7p"]
+
+[resource]
+script = ExtResource("1_aw6q2")
+character_name = "Warrior"
+description = "Strong and fearless"
+portrait = ExtResource("1_uguor")
+starting_deck = ExtResource("3_p4f7p")
+draftable_cards = ExtResource("2_aimki")
+cards_per_turn = 4
+max_mana = 4
+max_health = 20
+art = ExtResource("1_uguor")

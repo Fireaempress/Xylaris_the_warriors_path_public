@@ -1,0 +1,15 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://bftlwm3o7snrl"]
+
+[ext_resource type="Texture2D" uid="uid://fo2vjtpefel0" path="res://art1/wand.png" id="1_batxr"]
+[ext_resource type="Script" path="res://characters/cards/wand.gd" id="2_klyvi"]
+
+[resource]
+script = ExtResource("2_klyvi")
+id = "wand"
+type = 0
+target = 2
+cost = 2
+rarity = 1
+icon = ExtResource("1_batxr")
+tooltip_text = "[center]Deal [color=red]4[/color] damage[/center]"
+special_text = "Sparkly!"

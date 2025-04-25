@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="CardPile" load_steps=7 format=3 uid="uid://2g53v6b2es0b"]
+
+[ext_resource type="Resource" uid="uid://v7kvjqhy5oja" path="res://characters/cards/orion.tres" id="1_0llpp"]
+[ext_resource type="Script" path="res://custom_resources/card_pile.gd" id="1_35ehr"]
+[ext_resource type="Resource" uid="uid://dpjqdow2hswgu" path="res://characters/cards/block.tres" id="2_feujt"]
+[ext_resource type="Resource" uid="uid://bftlwm3o7snrl" path="res://characters/cards/wand.tres" id="3_dwjm7"]
+[ext_resource type="Resource" uid="uid://65c1se7d6swl" path="res://characters/cards/heal.tres" id="3_mgs85"]
+[ext_resource type="Resource" uid="uid://dodiavfsugv0j" path="res://characters/cards/dagger.tres" id="4_pvuen"]
+
+[resource]
+script = ExtResource("1_35ehr")
+cards = Array[Resource("res://custom_resources/card.gd")]([ExtResource("2_feujt"), ExtResource("1_0llpp"), ExtResource("3_mgs85"), ExtResource("3_mgs85"), ExtResource("2_feujt"), ExtResource("2_feujt"), ExtResource("1_0llpp"), ExtResource("1_0llpp"), ExtResource("3_dwjm7"), ExtResource("3_dwjm7"), ExtResource("3_dwjm7"), ExtResource("4_pvuen"), ExtResource("4_pvuen")])

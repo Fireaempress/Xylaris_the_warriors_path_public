@@ -1,0 +1,15 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://dodiavfsugv0j"]
+
+[ext_resource type="Texture2D" uid="uid://yunh0ryyxkqh" path="res://art1/mecik.png" id="1_lqomn"]
+[ext_resource type="Script" path="res://characters/cards/dagger.gd" id="2_kuifx"]
+
+[resource]
+script = ExtResource("2_kuifx")
+id = "dagger"
+type = 0
+target = 2
+cost = 2
+rarity = 2
+icon = ExtResource("1_lqomn")
+tooltip_text = "[center]Deal [color=red]10[/color] damage[/center]"
+special_text = "Watch your back"

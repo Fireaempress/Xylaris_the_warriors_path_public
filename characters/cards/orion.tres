@@ -1,0 +1,15 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://v7kvjqhy5oja"]
+
+[ext_resource type="Texture2D" uid="uid://daqne8v2xb26y" path="res://art1/karticka orion.png" id="1_kv3sh"]
+[ext_resource type="Script" path="res://characters/cards/orion.gd" id="2_7i0x0"]
+
+[resource]
+script = ExtResource("2_7i0x0")
+id = "orion"
+type = 0
+target = 2
+cost = 1
+rarity = 1
+icon = ExtResource("1_kv3sh")
+tooltip_text = "[center]Deal [color=red]6[/color] damage[/center]"
+special_text = "As the stars foretold"

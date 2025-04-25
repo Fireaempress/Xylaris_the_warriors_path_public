@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="CharacterStats" load_steps=5 format=3 uid="uid://cj56g1txr2d86"]
+
+[ext_resource type="Texture2D" uid="uid://bvdjppuu3j10b" path="res://art1/kouzelnik.png" id="1_oxvdx"]
+[ext_resource type="Script" path="res://custom_resources/character_stats.gd" id="1_sbaem"]
+[ext_resource type="Resource" uid="uid://tbwlent8crnl" path="res://characters/warrior/warrior_draftable_cards.tres" id="2_nmxyj"]
+[ext_resource type="Resource" uid="uid://2g53v6b2es0b" path="res://characters/warrior/warrior_starting_deck.tres" id="3_ojtvb"]
+
+[resource]
+script = ExtResource("1_sbaem")
+character_name = "Wizard"
+description = "Magic's in the stars"
+portrait = ExtResource("1_oxvdx")
+starting_deck = ExtResource("3_ojtvb")
+draftable_cards = ExtResource("2_nmxyj")
+cards_per_turn = 4
+max_mana = 5
+max_health = 15
+art = ExtResource("1_oxvdx")

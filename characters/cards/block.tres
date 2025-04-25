@@ -1,0 +1,15 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://dpjqdow2hswgu"]
+
+[ext_resource type="Texture2D" uid="uid://56mefebp4qxw" path="res://art1/stit.png" id="1_kspm7"]
+[ext_resource type="Script" path="res://characters/cards/block.gd" id="2_hvhwp"]
+
+[resource]
+script = ExtResource("2_hvhwp")
+id = "block"
+type = 1
+target = 0
+cost = 1
+rarity = 0
+icon = ExtResource("1_kspm7")
+tooltip_text = "[center]Gain [color=magenta]4 [/color]block[/center]"
+special_text = "Try beating this!"

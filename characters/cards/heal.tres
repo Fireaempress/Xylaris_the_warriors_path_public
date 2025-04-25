@@ -1,0 +1,15 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://65c1se7d6swl"]
+
+[ext_resource type="Script" path="res://characters/cards/heal.gd" id="1_5hf88"]
+[ext_resource type="Texture2D" uid="uid://d0ghy0t6dupf2" path="res://art1/lahvička.png" id="1_ygrha"]
+
+[resource]
+script = ExtResource("1_5hf88")
+id = "heal"
+type = 2
+target = 0
+cost = 2
+rarity = 2
+icon = ExtResource("1_ygrha")
+tooltip_text = "[center]Heal for [color=green]3[/color][/center]"
+special_text = "I feel much better!"
